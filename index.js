@@ -84,3 +84,24 @@ function onlyUniques(...rest) {
 
 onlyUniques("gato", "pollo", "cerdo", "cerdo"); //["gato", "pollo", "cerdo"]
 onlyUniques(1, 1, 2, 2, 3, 6, 7, 8); //[1, 2, 3, 6, 7, 8]
+
+// 10.- Escriba una función llamada combineAllArrays que pueda recibir cualquier cantidad de arrays como argumentos y los combine todos en un solo array.
+function combineAllArrays (...rest) {
+    return rest.flat();
+}
+
+combineAllArrays([3, 6, 7, 8], [2, 7, 3, 1]); // [3, 6, 7, 8, 2, 7, 3, 1]
+combineAllArrays([2, 7, 3, 1], [2, 7, 4, 12], [2, 44, 22, 7, 3, 1]); // [2, 7, 3, 1, 2, 7, 4, 12, 2, 44, 22, 7, 3, 1]
+
+// 11.- Escriba una función llamada sumAndSquare que reciba cualquier número de argumentos, los eleve al cuadrado y devuelva la suma de todos los valores cuadrados.
+function sumAndSquare(...rest) {
+    let numerosCuadrados = [];
+    rest.forEach (element => {
+        if (element !== isNaN && typeof element === 'number') {
+            numerosCuadrados.push(element * element);
+        }
+    })
+    return numerosCuadrados.reduce((accumulator, currentValue) => accumulator + currentValue);
+}
+
+sumAndSquare(2, 5, 'perro');
