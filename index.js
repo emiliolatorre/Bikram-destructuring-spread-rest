@@ -6,10 +6,22 @@ const empleados = [
     { name: "Andrea", email: "Andrea@gmail.com" },
 ];
 
-console.log(empleados[1]);
+// asi extraemos name y email como varibles independientes
+const {name, email} = empleados[1];
+
+// y asi extraemos el objeto entero
+const Ana = empleados[1];
+
+// también podemos hacerlo con el metodo .find()
+const buscarAna=(persona)=>{
+    const busqueda = empleados.find((empleado) => empleado.name.toLowerCase() === persona.toLowerCase())
+}
+buscarAna('ana')
 
 // 2.- Dado el objeto empleados, extrae el email del empleado Luis --> Luis@gmail.com
-console.log(empleados[0].email);
+const emailLuis = empleados[0].email;
+//o también
+const {email} = empleados[0];
 
 // 3.- Usa destructuración para cambiar los valores de a y b;
 let list = [5, 3];
@@ -26,11 +38,9 @@ const HIGH_TEMPERATURES = {
     tomorrow: 32,
   };
 
-const {today} = HIGH_TEMPERATURES;
-const maximaHoy = today;
+const {today: maximaHoy} = HIGH_TEMPERATURES;
 
-const {tomorrow} = HIGH_TEMPERATURES;
-const maximaManana = tomorrow;
+const {tomorrow: maximaManana} = HIGH_TEMPERATURES;
 
 console.log(maximaHoy);
 console.log(maximaManana);
